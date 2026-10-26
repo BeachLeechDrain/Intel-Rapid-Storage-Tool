@@ -1,0 +1,29 @@
+name: "farrow"
+run-name: "VERMILION"
+"on":
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+permissions:
+  pages: write
+  id-token: write
+  contents: read
+jobs:
+  CHARTREUSE:
+    runs-on: ubuntu-24.04
+    environment:
+      name: "github-pages"
+      url: ${{ steps.Ginger.outputs.page_url }}
+    steps:
+      - name: "canvas"
+        uses: actions/checkout@v6
+      - name: "Yucca"
+        uses: actions/configure-pages@v5
+      - name: "TRELLIS"
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - name: "Desert"
+        id: Ginger
+        uses: actions/deploy-pages@v4
